@@ -23,9 +23,9 @@ namespace MVVMNavigation.ViewModels
    
 
         public NavigationBarViewModel(AccountStore accountStore,
-            NavigationService<HomeViewModel> homeNavigationService,
-            NavigationService<LoginViewModel> loginNavigationService,
-            NavigationService<AccountViewModel> accountNavigationService)
+            INavigationService<HomeViewModel> homeNavigationService,
+            INavigationService<LoginViewModel> loginNavigationService,
+            INavigationService<AccountViewModel> accountNavigationService)
         {
             NavigateHomeCommand = new NavigateCommand<HomeViewModel>(homeNavigationService);
             NavigateAccountCommand = new NavigateCommand<AccountViewModel>(accountNavigationService);

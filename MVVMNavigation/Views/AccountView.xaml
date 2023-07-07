@@ -8,37 +8,29 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <components:NavigationBar Grid.Row="0" DataContext="{Binding NavigationBarViewModel}"/>
-
-        <Grid Grid.Row="1" MaxWidth="1000" Margin="20">
-            <StackPanel >
-                <TextBlock
+        <StackPanel >
+            <TextBlock
                 Text="Account" FontSize="32"/>
 
-                <StackPanel Orientation="Horizontal"
+            <StackPanel Orientation="Horizontal"
                         Margin="0,20,0,10">
-                    <TextBlock Text="User "
+                <TextBlock Text="User "
                            FontWeight="SemiBold"/>
-                    <TextBlock Text="{Binding Username}"/>
-                </StackPanel>
+                <TextBlock Text="{Binding Username}"/>
+            </StackPanel>
 
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Email "
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Email "
                            FontWeight="SemiBold"/>
-                    <TextBlock Text="{Binding Email}"/>
-                </StackPanel>
+                <TextBlock Text="{Binding Email}"/>
+            </StackPanel>
 
-                <Button Margin="0 20 0 0"
+            <Button Margin="0 20 0 0"
                     Padding="12 4"
                     HorizontalAlignment="Left"
                     Content="Home"
                     Command="{Binding NavigateHomeCommand}"/>
-            </StackPanel>
-        </Grid>
+        </StackPanel>
+
     </Grid>
 </UserControl>

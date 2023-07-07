@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodels="clr-namespace:MVVMNavigation.ViewModels"
-        xmlns:local="clr-namespace:MVVMNavigation"
+        xmlns:components="clr-namespace:MVVMNavigation.Components"
         xmlns:views="clr-namespace:MVVMNavigation.Views"
+        xmlns:local="clr-namespace:MVVMNavigation"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
@@ -19,8 +20,13 @@
             <DataTemplate DataType="{x:Type viewmodels:AccountViewModel}">
                 <views:AccountView/>
             </DataTemplate>
+            
             <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
                 <views:LoginView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewmodels:LayoutViewModel}">
+                <components:Layout/>
             </DataTemplate>
         </ContentControl.Resources>
     </ContentControl>
