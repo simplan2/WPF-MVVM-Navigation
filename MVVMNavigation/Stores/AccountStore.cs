@@ -17,17 +17,18 @@ namespace MVVMNavigation.Stores
             set
             {
                 _currentAccount = value;
-                //CurrentAccountChanged?.Invoke();
+                CurrentAccountChanged?.Invoke();
             }
         }
 
         public bool IsLoggedIn => CurrentAccount != null;
+        public event Action CurrentAccountChanged;
 
-        //public event Action CurrentAccountChanged;
 
-        //public void Logout()
-        //{
-        //    CurrentAccount = null;
-        //}
+        internal void Logout()
+        {
+            CurrentAccount = null;
+        }       
+       
     }
 }
