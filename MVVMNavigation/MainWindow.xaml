@@ -6,13 +6,13 @@
         xmlns:viewmodels="clr-namespace:MVVMNavigation.ViewModels"
         xmlns:components="clr-namespace:MVVMNavigation.Components"
         xmlns:views="clr-namespace:MVVMNavigation.Views"
-        xmlns:local="clr-namespace:MVVMNavigation"
+        xmlns:local="clr-namespace:MVVMNavigation" xmlns:custon="clr-namespace:ModalControl;assembly=ModalControl"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
 
-    <ContentControl Content="{Binding CurrentViewModel}">
-        <ContentControl.Resources>
+    <Grid>
+        <Grid.Resources>
             <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
                 <views:HomeView/>
             </DataTemplate>
@@ -20,15 +20,21 @@
             <DataTemplate DataType="{x:Type viewmodels:AccountViewModel}">
                 <views:AccountView/>
             </DataTemplate>
-            
+
             <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
                 <views:LoginView/>
             </DataTemplate>
-            
+
             <DataTemplate DataType="{x:Type viewmodels:LayoutViewModel}">
                 <components:Layout/>
             </DataTemplate>
-        </ContentControl.Resources>
-    </ContentControl>
-    
+        </Grid.Resources>
+        
+        <custon:Modal Panel.ZIndex="100" IsOpen="{Binding IsOpen}">
+            <ContentControl Content="{Binding ModalCurrentViewModel}"/>
+        </custon:Modal> <!--Siempre Encima-->
+
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+    </Grid>
+
 </Window>
