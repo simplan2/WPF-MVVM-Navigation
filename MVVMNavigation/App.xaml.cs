@@ -30,7 +30,7 @@ namespace MVVMNavigation
             services.AddSingleton<INavigationService>(s => CreateHomeNavigationService(s));
             services.AddSingleton<CloseModalNavigationService>();
 
-            services.AddTransient<HomeViewModel>(s => new HomeViewModel(CreateLoginNavigationService(s)));
+            services.AddTransient<HomeViewModel>(s => new HomeViewModel(CreateLoginNavigationService (s)));
 
             services.AddTransient<AccountViewModel>(s => new AccountViewModel(
                 s.GetRequiredService<AccountStore>(),
